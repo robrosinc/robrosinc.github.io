@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="VCA: Vision-Click-Action Framework for Precise Manipulation of Segmented Objects in Target Ambiguous Environments">
+  <meta name="keywords" content="VCA, Vision-Click-Action, sam2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VCA</title>
 
@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/bigr">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -62,6 +62,7 @@
         <a class="navbar-link">
           More Research
         </a>
+        <!--
         <div class="navbar-dropdown">
           <a class="navbar-item" href="https://hypernerf.github.io">
             HyperNeRF
@@ -76,6 +77,7 @@
             PhotoShape
           </a>
         </div>
+        -->
       </div>
     </div>
 
@@ -93,14 +95,16 @@ for Precise Manipulation of Segmented Objects
 in Target Ambiguous Environments</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Donggeon Kim<sup>1</sup>,</span>
-            <span class="author-block">
-              Seungwon Jang<sup>1</sup>,</span>
-            <span class="author-block">
-              Hyunjun Park<sup>1</sup>,
+              <a href="https://donggeonkim.github.io/">Donggeon Kim</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              Daegyu Lim<sup>1</sup>,
+              <a href="https://seungwonjang.github.io/">Seungwon Jang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/hyeonjun/">Hyeonjun Park</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://daegyulim.github.io/">Daegyu Lim</a><sup>1</sup>,
             </span>
           </div>
 
@@ -170,12 +174,11 @@ in Target Ambiguous Environments</h1>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/whole.jpg" 
+      <img src="./static/images/whole.png" 
            alt="VCA architecture"
            style="width: 100%; height: auto;">
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">VCA Architecture</span> 
-        <!-- 여기에 네 프로젝트 설명으로 수정 -->
+        <span class="dnerf">VCA architecture</span> 
       </h2>
     </div>
   </div>
@@ -189,32 +192,9 @@ in Target Ambiguous Environments</h1>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            The reliance on language in Vision-Language-Action (VLA) models introduces ambiguity, cognitive overhead, and difficulties in precise object identification and sequential task execution, particularly in environments with multiple visually similar objects. To address these limitations, we propose Vision-Click-Action (VCA), a framework that replaces verbose textual commands with direct, click-based visual interaction using pretrained segmentation models. By allowing operators to specify target objects clearly through visual selection in the robot's 2D camera view, VCA reduces interpretation errors, lowers cognitive load, and provides a practical and scalable alternative to language-driven interfaces for real-world robotic manipulation. Experimental results validate that the proposed VCA framework achieves effective instance-level manipulation of specified target objects. 
           </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p>
+          
         </div>
       </div>
     </div>
@@ -223,10 +203,9 @@ in Target Ambiguous Environments</h1>
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
+        <h2 class="title is-3">Paper Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/xdqcctVpVmU?si=lMCaUP_lQRE1id_J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -238,18 +217,33 @@ in Target Ambiguous Environments</h1>
 <section class="section">
   <div class="container is-max-desktop">
 
-
-
-<!-- Tower of Hanoi -->
+<!-- Unseen Env Title-->
 <div class="columns is-centered">
-  <div class="column is-full-width has-text-centered">
-    <h2 class="title is-4">Tower of Hanoi</h2>
-    <div class="content has-text-justified">
-      <p>
-        Task execution on the Tower of Hanoi scenario using VCA.
-      </p>
-    </div>
+  <div class="column is-full-width">
+    <h2 class="title is-4 has-text-centered">Primary Tasks</h2>
+  </div>
+</div>
 
+
+<!-- 3 Column Layout -->
+<div class="columns is-centered">
+
+  <!-- Square Ring -->
+  <div class="column has-text-centered">
+    <h3 class="title is-5">Block Sorting</h3>
+    <div class="publication-video">
+      <iframe 
+        src="https://www.youtube.com/embed/-vOWcZdmwok"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Orange Ring -->
+  <div class="column has-text-centered">
+    <h3 class="title is-5">Tower of Hanoi</h3>
     <div class="publication-video">
       <iframe 
         src="https://www.youtube.com/embed/WEiPyupl3t0?si=oPKVgbCQwCe8xMKR"
@@ -258,16 +252,16 @@ in Target Ambiguous Environments</h1>
         allowfullscreen>
       </iframe>
     </div>
-
   </div>
+
 </div>
-<!-- /Tower of Hanoi -->
+<!-- /Unseen Env -->
 
 
 <!-- Unseen Object Title -->
 <div class="columns is-centered">
   <div class="column is-full-width">
-    <h2 class="title is-4 has-text-centered">Unseen Object</h2>
+    <h2 class="title is-4 has-text-centered">Visual Shift - Unseen Object</h2>
   </div>
 </div>
 
@@ -315,7 +309,7 @@ in Target Ambiguous Environments</h1>
 <!-- Unseen Env Title-->
 <div class="columns is-centered">
   <div class="column is-full-width">
-    <h2 class="title is-4 has-text-centered">Unseen Environment</h2>
+    <h2 class="title is-4 has-text-centered">Visual Shift - Unseen Environment</h2>
   </div>
 </div>
 
@@ -362,17 +356,16 @@ in Target Ambiguous Environments</h1>
             There's a lot of excellent work that was introduced around the same time as ours.
           </p>
           <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+            <a href="https://arxiv.org/html/2508.08748v1">Visual prompting for robotic manipulation</a> introduces visual prompting to ACT but with bounding boxes.
           </p>
           <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
+            <a href="https://arxiv.org/abs/2506.14317">ClutterDexGrasp</a> is optimized for grasp acquisition, using sam2 to generate 2d masks and projecting them to point clouds.
           </p>
           <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+            <a href="https://dexgraspvla.github.io/">DexGraspVLA</a> uses VLMs to generate masks for target objects.
           </p>
           <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+            <a href="https://arxiv.org/abs/2503.15987">Laser-guided interaction Interface</a> and <a href="https://arxiv.org/abs/2203.15219">AR Point&Click</a> are also an interesting read.
           </p>
         </div>
       </div>
